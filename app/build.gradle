@@ -35,10 +35,10 @@ android {
     }
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.mikita.ppo_lab"
+        applicationId "com.example.mikita.ppo_lab"      //собственное имя при компиляции проекта
         minSdkVersion 23
         targetSdkVersion 28
-        versionCode 1//getCommitsCount()
+        versionCode getCommitsCount()
         versionName 'bla'//getTag()
         setProperty("archivesBaseName", "$applicationId-$versionName")
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -48,7 +48,7 @@ android {
             applicationIdSuffix ".debug"
             debuggable true
         }
-        release {
+        release {                                       //убрать неиспользуемые ресурсы конфигурации
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.signingConfig
